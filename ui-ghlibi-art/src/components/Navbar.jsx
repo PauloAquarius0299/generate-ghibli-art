@@ -11,7 +11,6 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-6 text-gray-600 font-medium">
           <li><Link to="/" className="hover:text-blue-600">Home</Link></li>
           <li><Link to="/criar" className="hover:text-blue-600">Criar</Link></li>
-          <li><Link to="/features" className="hover:text-blue-600">Features</Link></li>
           <li><Link to="/galeria" className="hover:text-blue-600">Galeria</Link></li>
           <li><Link to="/ghibli" className="hover:text-blue-600">Ghibli</Link></li>
         </ul>
