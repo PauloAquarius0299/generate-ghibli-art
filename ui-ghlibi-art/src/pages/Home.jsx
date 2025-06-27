@@ -5,7 +5,12 @@ import card2 from '../assets/card2.png'
 import card3 from '../assets/card3.jpg'
 import section3 from '../assets/section3.png'
 import { Link } from 'react-router-dom';
+import ImagePreviews from '../components/ImagePreviews'; 
+import step1 from '../assets/step1.jpg';
+import step2 from '../assets/step2.jpg';
+import step3 from '../assets/step3.jpg';
 
+const exampleSteps = [step1, step2, step3];
 const Home = () => {
   return (
     <>
@@ -98,45 +103,60 @@ const Home = () => {
         </div>
       </section>
 
+               {/* Free Ghibli Style Generator Section */}
+    <section className="bg-white py-16 px-4 md:px-12">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-6">
+          Crie imagens com o visual lindo do Studio Ghibli de forma gratuita
+        </h2>
+        <p className="text-gray-700 text-lg max-w-3xl mx-auto mb-10">
+          Dê vida às suas ideias com o nosso gerador de imagens estilo Ghibli. Totalmente gratuito, intuitivo e com resultados incríveis inspirados nos mundos mágicos de Hayao Miyazaki.
+        </p>
+      </div>
+        <div className="max-w-4xl mx-auto mt-10">
+          <ImagePreviews images={exampleSteps} />
+        </div>
+    </section>
+
+
       {/* How It Works Section */}
-<section className="bg-blue-50 py-16 px-4 md:px-12">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    {/* Imagem explicativa */}
-    <img
-      src={section3}
-      alt="Como usar a plataforma"
-      className="w-full h-auto rounded-xl shadow-lg"
-    />
+      <section className="bg-blue-50 py-16 px-4 md:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* Imagem explicativa */}
+          <img
+            src={section3}
+            alt="Como usar a plataforma"
+            className="w-full h-auto rounded-xl shadow-lg"
+          />
 
-    {/* Texto explicativo */}
-    <div>
-      <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-6">
-        Como usar a plataforma?
-      </h2>
-      <ul className="space-y-4 text-gray-700 text-lg leading-relaxed list-disc list-inside">
-        <li>
-          <strong>Escolha um método:</strong> Você pode descrever a imagem com palavras ou enviar uma imagem como base.
-        </li>
-        <li>
-          <strong>Geração com IA:</strong> Nossa IA transforma suas ideias em uma obra no estilo Ghibli com alta qualidade.
-        </li>
-        <li>
-          <strong>Visualize e baixe:</strong> Veja o resultado e salve para compartilhar ou inspirar novos projetos.
-        </li>
-        <li>
-          <strong>É rápido e gratuito!</strong> Basta clicar em “Criar” e começar agora mesmo.
-        </li>
-      </ul>
+          {/* Texto explicativo */}
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold text-blue-800 mb-6">
+              Como usar a plataforma?
+            </h2>
+            <ul className="space-y-4 text-gray-700 text-lg leading-relaxed list-disc list-inside">
+              <li>
+                <strong>Escolha um método:</strong> Você pode descrever a imagem com palavras ou enviar uma imagem como base.
+              </li>
+              <li>
+                <strong>Geração com IA:</strong> Nossa IA transforma suas ideias em uma obra no estilo Ghibli com alta qualidade.
+              </li>
+              <li>
+                <strong>Visualize e baixe:</strong> Veja o resultado e salve para compartilhar ou inspirar novos projetos.
+              </li>
+              <li>
+                <strong>É rápido e gratuito!</strong> Basta clicar em “Criar” e começar agora mesmo.
+              </li>
+            </ul>
 
-      <Link to="/criar">
-        <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500 transition">
-          Começar Agora
-        </button>
-      </Link>
-    </div>
-  </div>
-</section>
-
+            <Link to="/criar">
+              <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-500 transition">
+                Começar Agora
+              </button>
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
