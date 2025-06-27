@@ -16,7 +16,7 @@ const Navbar = () => {
           <li><Link to="/ghibli" className="hover:text-blue-600">Ghibli</Link></li>
         </ul>
         <Link to="/criar">
-          <button className='bg-blue-600 py-2 px-8 rounded-lg text-white cursor-pointer hover:bg-blue-400'>
+          <button className='bg-blue-600 py-3 px-8 rounded-lg text-white text-lg font-medium hover:bg-blue-500 transition cursor-pointer'>
             Criar
           </button>
         </Link>

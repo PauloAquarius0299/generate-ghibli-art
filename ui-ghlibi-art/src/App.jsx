@@ -5,6 +5,7 @@ import Criar from './pages/Criar';
 import Features from './pages/Features';
 import Galeria from './pages/Galeria';
 import Ghibli from './pages/Ghibli';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/ghibli" element={<Ghibli />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }
