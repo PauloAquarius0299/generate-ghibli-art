@@ -1,5 +1,5 @@
 # Projeto fullstack
-Desenvolvendo um software com AI (stability) para gerar imagens como animações do studio ghibli 
+Desenvolvendo um software com AI (stability) para gerar imagens como animações do studio ghibli, com Java Spring Boot no backend
 ![Captura de Tela (1501)](https://github.com/user-attachments/assets/b36e2d6d-38e1-4621-82e9-eb24e9948e41)
 ### Ferramentas 
 * JavaScript
