@@ -14,27 +14,28 @@ import org.springframework.web.multipart.MultipartFile;
         configuration = FeignConfig.class
 )
 public interface StabilityAIClient {
+
     @PostMapping(
-            value = "/v1/generation/${engine_id}text-to-image",
+            value = "/v1/generation/{engine_id}/text-to-image",
             consumes = MediaType.APPLICATION_JSON_VALUE,
-            headers = {"Accept=image/png"}
+            produces = MediaType.IMAGE_PNG_VALUE
     )
     byte[] generationImageFromText(
-            @RequestHeader("Authorization") String authorizationHeader,
-            @PathVariable("engine_id") String engineId,
-            @RequestBody TextToImageRequest requestBody
-            );
+            @RequestHeader("Authorization") String authHeader,
+            @RequestHeader("Accept") String acceptHeader,
+            @RequestBody TextToImageRequest request
+    );
+
     @PostMapping(
             value = "/v1/generation/{engine_id}/image-to-image",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
-            headers = {"Accept=image/png"}
+            produces = MediaType.IMAGE_PNG_VALUE
     )
     byte[] generateImageFromImage(
             @RequestHeader("Authorization") String authorizationHeader,
             @PathVariable("engine_id") String engineId,
             @RequestPart("init_image") MultipartFile initImage,
-            @RequestPart("text_prompt[0][text]") String textPrompt,
-            @RequestPart("style_preset") String stylePreset
+            @RequestPart("text_prompt[0][text]") String textPrompt
+            //@RequestPart(value = "style_preset", required = false) String stylePreset
     );
-
 }

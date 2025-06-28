@@ -22,9 +22,9 @@ public class TextToImageRequest {
     }
 
     @Data
+    @NoArgsConstructor
     @AllArgsConstructor
     public static class TextPrompt {
         private String text;
     }
-
 }

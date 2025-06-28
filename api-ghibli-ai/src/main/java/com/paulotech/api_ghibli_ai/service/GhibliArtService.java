@@ -2,6 +2,7 @@ package com.paulotech.api_ghibli_ai.service;
 
 import com.paulotech.api_ghibli_ai.client.StabilityAIClient;
 import com.paulotech.api_ghibli_ai.dto.TextToImageRequest;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,7 +12,10 @@ public class GhibliArtService {
     private final StabilityAIClient stabilityAIClient;
     private final String apiKey;
 
-    public GhibliArtService(StabilityAIClient stabilityAIClient, String apiKey) {
+    public GhibliArtService(
+            StabilityAIClient stabilityAIClient,
+            @Value("${stability.api.key}") String apiKey
+    ) {
         this.stabilityAIClient = stabilityAIClient;
         this.apiKey = apiKey;
     }
@@ -25,8 +29,8 @@ public class GhibliArtService {
                 "Bearer" + apiKey,
                 engineId,
                 image,
-                finalPrompt,
-                stylePreset
+                finalPrompt
+                //stylePreset
         );
     }
 
